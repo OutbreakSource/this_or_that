@@ -1,26 +1,20 @@
 import './App.css';
 import {useState} from "react";
 import {Backdrop, Stack} from '@mui/material'
+import images from "./images";
 
-function App() {
-    const [rando, setRando] = useState(Math.floor(Math.random() * 10));
-    const [rando1, setRando1] = useState(Math.floor(Math.random() * 10));
+function App(){
+
+
+    const [rando, setRando] = useState(Math.floor(Math.random() * 33));
+    const [rando1, setRando1] = useState(Math.floor(Math.random() * 33));
     const [score, setScore] = useState(0)
     const [screen, setScreen] = useState(false)
     const [maxScore, setMax] = useState(0);
-    const test = [
-        require('./Sheeran/1e839297489f85e77ebeff79f208f00c.jpg'),
-        require('./Sheeran/51bed08814f4e33d2fef4638455246ae.jpg'),
-        require('./Sheeran/933b961e2d4a807534fcedfbc10f610d.png'),
-        require('./Sheeran/IMG_1583.png'),
-        require('./Sheeran/edsheeranlookalike2.jpg'),
-        require('./Sheeran/maxresdefault.jpg'),
-        require('./Sheeran/trulySheeran.jpg'),
-        require('./Sheeran/trulySheeran1.jpg'),
-        require('./Sheeran/trulySheeran2.png'),
-        require('./Sheeran/trulySheeran3.png'),
-        require('./Sheeran/trulySheeran4.png'),
-    ]
+
+
+    const test = images
+
 
 
     function checkThis(){
@@ -72,7 +66,7 @@ function App() {
         setRando1(Math.floor(Math.random() * 10))
         if(rando === rando1){
             setRando(Math.floor(Math.random() * 10))
-            setRando1(Math.floor(Math.random() * 10))
+            setRando1(rando1 + 1)
         }
         setLoading(false)
     }
