@@ -62,11 +62,11 @@ function App(){
 
     function getNewImage(){
         setLoading(true)
-        setRando(Math.floor(Math.random() * 10))
-        setRando1(Math.floor(Math.random() * 10))
+        setRando(Math.floor(Math.random() * 33))
+        setRando1(Math.floor(Math.random() * 33))
         if(rando === rando1){
-            setRando(Math.floor(Math.random() * 10))
-            setRando1(rando1 + 1)
+            setRando(Math.floor(Math.random() * 33))
+            setRando1(rando1 - 1)
         }
         setLoading(false)
     }

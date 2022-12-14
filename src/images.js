@@ -19,6 +19,7 @@ const images = [
     require('./Sheeran/trulySheeran11.png'),
     require('./Sheeran/trulySheeran12.jpg'),
     require('./Sheeran/trulySheeran13.jpg'),
+    require('./Sheeran/new1.png'),
     require('./Sheeran/new2.png'),
     require('./Sheeran/new3.png'),
     require('./Sheeran/new4.png'),
