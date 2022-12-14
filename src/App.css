@@ -69,15 +69,18 @@
   flex-direction: row;
   display: flex;
   justify-content: space-between;
+  font-family: 'Hanalei Fill', "Fira Code";
+
 }
 
 .button {
   background-color: #dc8800;
   color: white;
   font-size: 20px;
+  font-family: 'Hanalei Fill', "Fira Code";
   padding: 10px 60px;
   border-radius: 5px;
-  margin: 10px 0px;
+  margin: 10px 10px;
   cursor: pointer;
   align-items: center;
 
@@ -91,6 +94,8 @@
   align-items: center;
   flex-direction: row;
   display: flex;
+  font-family: 'Hanalei Fill', "Fira Code";
+
 
 }
 
@@ -156,9 +161,22 @@ h1 {
 }
 
 .blockText {
+  font-family: 'Hanalei Fill', "Fira Code";
+
   align-items: center;
   font-size: 50px;
   background: #f83535;
+  border-width: 0.1rem;
+  border-style: solid;
+  border-color: black;
+}
+
+.blockTextGood {
+  font-family: 'Hanalei Fill', "Fira Code";
+
+  align-items: center;
+  font-size: 50px;
+  background: #1aff00;
   border-width: 0.1rem;
   border-style: solid;
   border-color: black;

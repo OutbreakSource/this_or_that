@@ -22,6 +22,7 @@ function App() {
         require('./Sheeran/trulySheeran4.png'),
     ]
 
+
     function checkThis(){
         if(test[rando].includes("trulySheeran")){
             setScore(score + 1)
@@ -66,17 +67,19 @@ function App() {
     }
 
     function getNewImage(){
+        setLoading(true)
         setRando(Math.floor(Math.random() * 10))
         setRando1(Math.floor(Math.random() * 10))
         if(rando === rando1){
             setRando(Math.floor(Math.random() * 10))
             setRando1(Math.floor(Math.random() * 10))
         }
+        setLoading(false)
     }
 
 
-
-  return (
+    const [loading, setLoading] = useState(false);
+    return (
     <div className={"App"}>
         <Backdrop open={screen}>
             <Stack>
@@ -87,7 +90,11 @@ function App() {
                     Reset?
                 </button>
             </Stack>
-
+        </Backdrop>
+        <Backdrop open={loading}>
+            <text className={"blockTextGood"}>
+                Found the Sheeran
+            </text>
         </Backdrop>
         <div className={"imageContainer"}>
 
@@ -100,9 +107,9 @@ function App() {
 
             <img src={test[rando1]} alt={"test"} className={"image"}/>
         </div>
-        <text style={{textAlign: "center", fontSize: 50}}>Score: {score}</text>
+        <text style={{textAlign: "center", fontSize: 50, fontFamily: 'Hanalei Fill'}}>Score: {score}</text>
         <br/>
-        <text style={{textAlign: "center", fontSize: 50}}>Max score: {maxScore}</text>
+        <text style={{textAlign: "center", fontSize: 50, fontFamily: 'Hanalei Fill'}}>Max score: {maxScore}</text>
     </div>
 
 
