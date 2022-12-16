@@ -11,16 +11,18 @@ function App(){
     const [score, setScore] = useState(0)
     const [screen, setScreen] = useState(false)
     const [maxScore, setMax] = useState(0);
-
-
+    const [loading, setLoading] = useState(false);
     const test = images
+
 
 
 
     function checkThis(){
         if(test[rando].includes("trulySheeran")){
+            setLoading(true)
             setScore(score + 1)
             getNewImage()
+            setLoading(false)
         }
         else{
             setScreen(true)
@@ -28,8 +30,10 @@ function App(){
     }
     function checkThat(){
         if(test[rando1].includes("trulySheeran")){
+            setLoading(true)
             setScore(score + 1)
             getNewImage()
+            setLoading(false)
 
         }
         else{
@@ -38,15 +42,14 @@ function App(){
     }
     function checkBoth(){
         if(!test[rando1].includes("trulySheeran") && !test[rando].includes("trulySheeran")){
+            setLoading(true)
             setScore(score + 1)
             getNewImage()
-
+            setLoading(false)
         }
         else{
             setScreen(true)
-
         }
-
     }
 
     function reset(){
@@ -61,18 +64,11 @@ function App(){
     }
 
     function getNewImage(){
-        setLoading(true)
         setRando(Math.floor(Math.random() * 33))
-        setRando1(Math.floor(Math.random() * 33))
-        if(rando === rando1){
-            setRando(Math.floor(Math.random() * 33))
-            setRando1(rando1 - 1)
-        }
-        setLoading(false)
+        setRando1(Math.floor(Math.random() * (33 - rando)))
     }
 
 
-    const [loading, setLoading] = useState(false);
     return (
     <div className={"App"}>
         <Backdrop open={screen}>
@@ -84,11 +80,6 @@ function App(){
                     Reset?
                 </button>
             </Stack>
-        </Backdrop>
-        <Backdrop open={loading}>
-            <text className={"blockTextGood"}>
-                Found the Sheeran
-            </text>
         </Backdrop>
         <div className={"imageContainer"}>
 
@@ -104,6 +95,11 @@ function App(){
         <text style={{textAlign: "center", fontSize: 50, fontFamily: 'Hanalei Fill'}}>Score: {score}</text>
         <br/>
         <text style={{textAlign: "center", fontSize: 50, fontFamily: 'Hanalei Fill'}}>Max score: {maxScore}</text>
+        <Backdrop open={loading}>
+            <text className={"blockTextGood"}>
+                Found the Sheeran
+            </text>
+        </Backdrop>
     </div>
 
 
